@@ -14,7 +14,7 @@ var client *ent.Client
 func InitDataSource() *ent.Client {
 	username := os.Getenv("DB_USERNAME")
 	password := os.Getenv("DB_PASSWORD")
-	c, err := ent.Open("postgres", "host=localhost port=5432 user="+username+" dbname=postgres password="+password+" sslmode=disable")
+	c, err := ent.Open("postgres", "host=localhost port=5432 user="+username+" dbname=test_01 password="+password+" sslmode=disable")
 	if err != nil {
 		log.Fatalf("failed opening connection to postgres: %v", err)
 	}
