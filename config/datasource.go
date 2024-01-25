@@ -4,6 +4,7 @@ import (
 	"backend_01/ent"
 	"context"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
 )
@@ -11,7 +12,9 @@ import (
 var client *ent.Client
 
 func InitDataSource() *ent.Client {
-	c, err := ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=test_01 password=sameer123")
+	username := os.Getenv("DB_USERNAME")
+	password := os.Getenv("DB_PASSWORD")
+	c, err := ent.Open("postgres", "host=localhost port=5432 user="+username+" dbname=postgres password="+password+" sslmode=disable")
 	if err != nil {
 		log.Fatalf("failed opening connection to postgres: %v", err)
 	}
