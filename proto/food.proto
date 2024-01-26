@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "food/proto";
+
+message Food {
+    string name = 1;
+    string description = 2;
+    string image = 3;
+    string price = 4;
+    string category = 5;
+    string restaurant = 6;
+    string id = 7;
+}
+
+message FoodList {
+    repeated Food foods = 1;
+}
+
+message FoodRequest {}
+
+service UserService {
+    rpc getAllUsers (FoodRequest) returns (FoodList);
+}

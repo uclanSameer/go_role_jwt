@@ -28,6 +28,8 @@ func CreateUser(user *models.User) {
 
 func Login(a *models.User) (string, error) {
 	// match hashed password with plain password
+	GetFoods()
+
 	client := config.UserClient()
 	// find user by username
 	u, err := client.Query().Where(user.Username(a.Username)).Only(context.Background())
