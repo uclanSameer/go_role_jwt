@@ -1,6 +1,6 @@
 module backend_01
 
-go 1.21.2
+go 1.18
 
 require entgo.io/ent v0.12.5
 
