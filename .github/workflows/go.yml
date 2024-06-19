@@ -40,7 +40,7 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-      working-directory: ./terraform
+      working-directory: terraform
 
     - name: Terraform Validate
       run: terraform validate
